@@ -39,7 +39,6 @@ jobs:
 
       - name: Dependency vulnerability scan
         run: safety check -r requirements.txt
-
       
       ############################################
       # 3. Build Docker
