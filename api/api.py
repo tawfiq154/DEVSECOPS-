@@ -80,8 +80,10 @@ def read_file():
 
     file_path = (BASE_DIR / filename).resolve()
 
-    # ✅ Prevent path traversal
-    if not str(file_path).startswith(str(BASE_DIR)):
+    # ✅ Prevent path traversal using a robust containment check
+    try:
+        file_path.relative_to(BASE_DIR)
+    except ValueError:
         return jsonify(error="Invalid file path"), 400
 
     if not file_path.exists():
