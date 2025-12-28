@@ -16,12 +16,12 @@ jobs:
       # 1. Analyse SAST CodeQL
       ############################################
       - name: Init CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
           languages: python
       
       - name: Run CodeQL
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v4
       
       ############################################
       # 2. Analyse sécurité Python avec Bandit
