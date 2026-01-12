@@ -10,7 +10,7 @@ jobs:
   devsecops:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       ############################################
       # 1. Analyse SAST CodeQL
@@ -50,7 +50,7 @@ jobs:
       # 4. Scan Docker avec Trivy
       ############################################
       - name: Trivy Scan
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.33.1
         with:
           scan-type: image
           image-ref: devsecops-api
